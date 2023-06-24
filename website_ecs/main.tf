@@ -45,3 +45,9 @@ module "ecs_task_exec_role" {
   project_name = module.vpc.project_name
   
 }
+module "acm" {
+  source = "../acm"
+  domain_name = var.domain_name
+  alternative_name = var.alternative_name
+  
+}

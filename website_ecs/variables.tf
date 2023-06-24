@@ -42,3 +42,9 @@ variable "private_data_subnet_az2_cidr" {
   //  cidr_block = "10.15.7.0/24"
 
 }
+variable "domain_name" {
+      
+}
+variable "alternative_name" {
+  
+}
