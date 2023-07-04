@@ -48,3 +48,6 @@ variable "domain_name" {
 variable "alternative_name" {
   
 }
+variable "container_image" {
+  
+}

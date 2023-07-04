@@ -60,3 +60,15 @@ module "alb" {
   certificate_arn = module.acm.certificate_arn
   ALB_SG_id = module.security_group.ALB_SG_id
 }
+module "ecs" {
+  source = "../ecs"
+  project_name = module.vpc.project_name
+  ecs_task_exec_role_arn = module.ecs_task_exec_role.ecs_task_exec_role_arn
+  container_image = var.container_image
+  region = module.vpc.region
+  private_app_subnet_az1_id = module.vpc.private_app_subnet_az1_id
+  private_app_subnet_az2_id = module.vpc.private_app_subnet_az2_id
+  ECS_SG_id = module.security_group.ECS_SG_id
+  alb_target_group_arn = module.alb.alb_target_group_arn
+  
+}
